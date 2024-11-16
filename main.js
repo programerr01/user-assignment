@@ -17,8 +17,11 @@ connectToDatabase().then((res)=>{
     console.log("Connected to database");
 })
 
+app.get("/", (req, res) => {
+    res.redirect("/docs");
+});
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 app.use("/user",userRoutes);
