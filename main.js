@@ -18,7 +18,7 @@ connectToDatabase().then((res)=>{
 })
 
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 
 app.use("/user",userRoutes);

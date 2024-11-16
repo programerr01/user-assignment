@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
  * @swagger
  * /user/signup:
  *   post:
- *     summary: User signup
+ *     summary: User signup(Admin or User)
  *     requestBody:
  *       required: true
  *       content:
@@ -97,7 +97,7 @@ router.post("/signup", async (req, res) => {
  * @swagger
  * /user/login:
  *   post:
- *     summary: User login
+ *     summary: User login(Admin or User)
  *     requestBody:
  *       required: true
  *       content:
