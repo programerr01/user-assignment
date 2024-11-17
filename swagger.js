@@ -1,7 +1,10 @@
-const swaggerJSDoc = require('swagger-jsdoc');
-
-
-const swaggerDefinition = { 
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const swagger_jsdoc_1 = __importDefault(require("swagger-jsdoc"));
+const swaggerDefinition = {
     openapi: '3.0.0',
     info: {
         title: 'Backend API Testing for Assignment',
@@ -15,19 +18,16 @@ const swaggerDefinition = {
     ],
     components: {
         securitySchemes: {
-          bearerAuth: {
-            type: 'http',
-            scheme: 'bearer',
-            bearerFormat: 'JWT',
-          },
+            bearerAuth: {
+                type: 'http',
+                scheme: 'bearer',
+                bearerFormat: 'JWT',
+            },
         },
     },
-    
 };
-
 const options = {
     swaggerDefinition,
     apis: ['./routes/*.js']
 };
-
-module.exports = swaggerJSDoc(options);
+exports.default = (0, swagger_jsdoc_1.default)(options);
