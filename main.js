@@ -10,12 +10,12 @@ const swagger_ui_express_1 = __importDefault(require("swagger-ui-express"));
 const swagger_1 = __importDefault(require("./swagger"));
 const dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config();
-const connectToDatabase = require("./lib/mongoose");
+const mongoose_1 = __importDefault(require("./lib/mongoose"));
 const userRoutes = require("./routes/userRoutes");
 const adminRoutes = require("./routes/adminRoutes");
 app.use(body_parser_1.default.urlencoded({ extended: true }));
 app.use(body_parser_1.default.json());
-connectToDatabase().then((res) => {
+(0, mongoose_1.default)().then((res) => {
     console.log("Connected to database");
 });
 app.get("/", (req, res) => {
